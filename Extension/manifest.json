@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "Send Highlighted Text",
+    "version": "0.1",
+    "description": "Highlight and send text to example.com",
+    "permissions": [
+      "activeTab",
+      "contextMenus"
+    ],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*",
+      "https://www.example.com/"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["scripts.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "extension.html",
+      "default_icon": {
+        "16": "images/fly16.png",
+        "48": "images/fly48.png",
+        "128": "images/fly128.png"
+      }
+    },
+    "icons": {
+      "16": "images/fly16.png",
+      "48": "images/fly48.png",
+      "128": "images/fly128.png"
+    }
+}
